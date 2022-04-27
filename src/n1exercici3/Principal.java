@@ -1,4 +1,4 @@
-package n1exercici1;
+package n1exercici3;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -21,10 +21,16 @@ public class Principal {
 
 		List<String> lines = Arrays.asList("spring", "node", "mkyong");
 		List<String> result = lines.stream() // convert list to stream
-				.filter(line -> line.contains("o")) // we dont like mkyong
+				.filter(line -> line.contains("o") && line.length() > 5) // we dont like mkyong
 				.collect(Collectors.toList()); // collect the output and convert streams to a List
 		result.forEach(System.out::println);
-		
+		System.out.println("__________");
+		List<String> meses = Arrays.asList("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio");
+		// meses.forEach(System.out::println);
+		System.out.println("Lambda forEach:");
+		meses.forEach(l -> System.out.println(l)); // it works
+		System.out.println("Method Reference upperCase forEach:");
+		meses.forEach(System.out::println);
 		
 	}
 	

@@ -1,4 +1,4 @@
-package n1exercici1;
+package n1exercici2;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -21,10 +21,10 @@ public class Principal {
 
 		List<String> lines = Arrays.asList("spring", "node", "mkyong");
 		List<String> result = lines.stream() // convert list to stream
-				.filter(line -> line.contains("o")) // we dont like mkyong
+				.filter(line -> line.contains("o") && line.length() > 5) // we dont like mkyong
 				.collect(Collectors.toList()); // collect the output and convert streams to a List
 		result.forEach(System.out::println);
-		
+	
 		
 	}
 	
